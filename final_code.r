@@ -208,7 +208,7 @@ library(randomForest)
 
 # Random Forest
 set.seed(123)
-rf_model <- randomForest(sale_price ~ ., data = train_data, ntree = 5)
+rf_model <- randomForest(sale_price ~ ., data = train_data, ntree = 25)
 rf_predictions <- predict(rf_model, newdata = validation_data)
 rf_mse <- mean((validation_y - rf_predictions)^2)
 cat("Random Forest MSE:", rf_mse, "\n")
